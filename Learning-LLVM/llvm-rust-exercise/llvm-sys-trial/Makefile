@@ -9,7 +9,7 @@ all: target/debug/libmath.$(EXT)
     LD_LIBRARY_PATH=./target/debug/ ./run
  
 target/debug/libmath.$(EXT): src/lib.rs Cargo.toml
-	cargo build
+	LLVM_SYS_60_PREFIX=/usr/local/opt/llvm cargo build
  
 clean:
 	rm -rf target
